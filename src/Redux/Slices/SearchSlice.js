@@ -19,6 +19,7 @@ const SearchSlice = createSlice({
     searchSuccess: (state, action) => {
       state.status = "successful";
       state.results = action.payload;
+      console.log(action.payload);
       state.error = null;
     },
     searchfail: (state, action) => {
@@ -34,8 +35,8 @@ export const searchMoviesAsync = (query) => async (dispatch) => {
     const results = await axios.get(
       `https://api.themoviedb.org/3/search/multi?api_key=14bdd69ce887376edfafb09f23f78fe9&query=${query} `
     );
-    console.log("hello");
-    dispatch(searchSuccess(results.data.results));
+    console.log(results.data);
+    dispatch(searchSuccess(results.data));
   } catch (error) {
     dispatch(searchfail(error.message));
   }

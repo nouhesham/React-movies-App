@@ -10,8 +10,9 @@ const Search = () => {
   const dispatch = useDispatch();
   const handleSearch = (event) => {
     let searchedfilm = event.target.value;
-    console.log(searchedfilm);
-    dispatch(searchMoviesAsync(searchedfilm));
+    if (searchedfilm && searchedfilm != null) {
+      dispatch(searchMoviesAsync(searchedfilm));
+    }
   };
   return (
     <div>

@@ -9,8 +9,8 @@ const options = [
 const SelectComponent = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
   const handleMediaChange = (selectedOption) => {
-    setSelectedMedia(selectedOption);
-    console.log(selectedOption);
+    setSelectedMedia(selectedOption.value);
+    console.log(selectedMedia);
   };
   return (
     <div>

@@ -1,0 +1,52 @@
+.img {
+  padding: 3rem;
+  position: absolute;
+  top: 32%;
+}
+@media (max-width: 500px) {
+  .img {
+    padding: 5rem;
+  }
+}
+.description {
+  font-size: 0.75rem;
+  padding: 2rem 4rem 2rem 0;
+  font-weight: 500;
+  opacity: 0.7;
+}
+.price {
+  font-size: 1rem;
+}
+.rating {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  font-weight: 800;
+  color: white;
+}
+
+.details {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 42%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black color */
+}
+.date {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+h3 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.imdb {
+  font-size: 0.6rem;
+  font-weight: 500;
+}

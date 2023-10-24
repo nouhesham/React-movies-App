@@ -1,7 +1,9 @@
 import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 const List = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/w500/";
+
   return (
     <div>
       <Container>
@@ -20,10 +22,16 @@ const List = ({ movies }) => {
                   key={mov.id}
                 >
                   <Card style={{ width: "18rem" }}>
-                    <Card.Img
-                      variant="top"
-                      src={`${baseUrl}/${mov.poster_path}`}
-                    />
+                    <Link to={`/movies/${mov.media_type}/${mov.id}`}>
+                      <Card.Img
+                        variant="top"
+                        src={
+                          `${baseUrl ?? ""}/${mov.poster_path}` ||
+                          "https://placehold.co/600x400"
+                        }
+                      />
+                    </Link>
+
                     <Card.Body>
                       <Card.Title className="text-center">
                         {mov.title ? mov.title : mov.original_name.slice(0, 21)}

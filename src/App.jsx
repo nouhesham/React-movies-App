@@ -7,9 +7,8 @@ import Tvshows from "./Components/Tvshows/Tvshows";
 import Celeb from "./Components/Celeb/Celeb";
 import Blog from "./Components/Blog/Blog";
 import Navbarsection from "./Components/Navbar/Navbar";
-<style>
-
-</style>;
+import MovieDetails from "./Components/MovieDetails/MovieDetails";
+<style></style>;
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +19,10 @@ function App() {
         <Route path="/tvshows" element={<Tvshows />}></Route>
         <Route path="/celeb" element={<Celeb />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
+        <Route
+          path="/movies/:media_type/:id"
+          element={<MovieDetails />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );
