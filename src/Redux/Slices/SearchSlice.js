@@ -18,7 +18,7 @@ const SearchSlice = createSlice({
     searchSuccess: (state, action) => {
       state.status = "successful";
       state.results = action.payload;
-      console.log(action.payload);
+
       state.error = null;
     },
     searchfail: (state, action) => {
