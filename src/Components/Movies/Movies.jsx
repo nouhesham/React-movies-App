@@ -10,12 +10,24 @@ const Movies = () => {
     dispatch(fetchMovies());
   }, [dispatch]);
   const moviesList = useSelector((store) => store.movies.moviesList);
-  console.log(moviesList);
-  const searchResults = useSelector((store) => store.search.results);
 
+  const searchResults = useSelector((store) => store.search.results);
+  const selectedMediaType = useSelector(
+    (state) => state.mediatype.selectedMediaType
+  );
+
+  const filteredMovies = selectedMediaType
+    ? moviesList.filter((movie) => movie.media_type === selectedMediaType)
+    : moviesList;
   return (
     <div>
-      <List movies={searchResults?.results || moviesList}></List>
+      <List
+        movies={
+          (searchResults?.results && searchResults?.results.length > 0
+            ? searchResults?.results
+            : filteredMovies) || filteredMovies
+        }
+      ></List>
     </div>
   );
 };

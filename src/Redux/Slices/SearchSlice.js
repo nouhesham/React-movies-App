@@ -10,7 +10,6 @@ const initialState = {
 const SearchSlice = createSlice({
   name: "search",
   initialState,
-
   reducers: {
     searchStart: (state) => {
       state.status = "searching";
@@ -35,14 +34,13 @@ export const searchMoviesAsync = (query) => async (dispatch) => {
     const results = await axios.get(
       `https://api.themoviedb.org/3/search/multi?api_key=14bdd69ce887376edfafb09f23f78fe9&query=${query} `
     );
-    console.log(results.data);
+
     dispatch(searchSuccess(results.data));
   } catch (error) {
     dispatch(searchfail(error.message));
   }
 };
 
-console.log(SearchSlice);
 export const { searchStart, searchSuccess, searchfail } = SearchSlice.actions;
 
 export default SearchSlice.reducer;

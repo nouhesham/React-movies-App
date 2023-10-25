@@ -6,8 +6,6 @@ export const fetchMovies = createAsyncThunk("movies/fetchMovies", async () => {
     "https://api.themoviedb.org/3/trending/all/day?api_key=14bdd69ce887376edfafb09f23f78fe9"
   );
 
-  console.log(MoviesList.data.results);
-
   return MoviesList.data.results;
 });
 
