@@ -23,7 +23,7 @@ const MovieDetails = () => {
   }, []);
 
   return (
-    <div className="w-100 overflow-hidden">
+    <div className="w-100">
       <div className="row position-relative">
         <div className={styles.overlay}></div>
         <img
