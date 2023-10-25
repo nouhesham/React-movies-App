@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Card } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import styles from "./styles.module.css";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,7 +23,7 @@ const MovieDetails = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-100 overflow-hidden">
       <div className="row position-relative">
         <div className={styles.overlay}></div>
         <img
@@ -44,9 +44,9 @@ const MovieDetails = () => {
           <div className="col-lg-8 p-5">
             <div className={styles.details}>
               <p className={styles.date}>
-                {new Date(movie.release_date).getFullYear()}
+                {new Date(movie.release_date)?.getFullYear()}
               </p>
-              <h3>{movie.title}</h3>
+              <h3>{movie.title || movie.original_name}</h3>
               <p className={styles.description}>{movie.overview}</p>
 
               <div>

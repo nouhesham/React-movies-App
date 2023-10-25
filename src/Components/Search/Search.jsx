@@ -5,12 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { searchMoviesAsync } from "../../Redux/Slices/SearchSlice";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 const Search = () => {
   const dispatch = useDispatch();
+  const [setsearch, setSearchedmovie] = useState(null);
   const handleSearch = (event) => {
     let searchedfilm = event.target.value;
     if (searchedfilm && searchedfilm != null) {
+      setSearchedmovie(searchedfilm);
       dispatch(searchMoviesAsync(searchedfilm));
     }
   };

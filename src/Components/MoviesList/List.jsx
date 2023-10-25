@@ -20,7 +20,7 @@ const List = ({ movies }) => {
                 className="col-lg-3 col-sm-12 col-md-6 p-2 d-flex justify-content-center"
                 key={mov.id}
               >
-                <Card style={{ width: "18rem" }}>
+                <Card style={{ width: "18rem" }} className="card">
                   <Link to={`/movies/${mov.media_type}/${mov.id}`}>
                     <Card.Img
                       variant="top"

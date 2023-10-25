@@ -6,9 +6,9 @@
 
 .description {
   font-size: 0.75rem;
-  padding: 2rem 4rem 2rem 0;
   font-weight: 500;
   opacity: 0.7;
+  overflow: hidden;
 }
 .price {
   font-size: 1rem;
@@ -26,6 +26,7 @@
   top: 50%;
   left: 42%;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -34,6 +35,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black color */
 }
+
 .date {
   font-size: 1.5rem;
   font-weight: 800;
@@ -56,7 +58,6 @@ h3 {
   justify-content: center;
   margin-top: 1rem;
 }
-
 @media (max-width: 1500px) {
   .details {
     top: 29%;
@@ -111,15 +112,39 @@ h3 {
     width: 100%;
     left: 0%;
     padding-top: 3rem;
+    top: 92%;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 475px) {
   .details {
-    padding-top: 0;
+    margin-top: 2rem;
+    top: 100%;
+    left: 10%;
+  }
+  h3 {
+    font-size: 1.5rem;
+    padding-top: 1rem;
   }
   .img {
     width: 90%;
     left: 5%;
     padding: 3rem;
+  }
+  .date {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 375px) {
+  .details {
+    margin-top: 0rem;
+    padding-top: 0;
+    top: 65%;
+    left: 10%;
+  }
+  h3 {
+    font-size: 1rem;
   }
 }

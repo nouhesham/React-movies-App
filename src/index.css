@@ -24,3 +24,7 @@ code {
   -moz-box-shadow: -5px 9px 42px -8px rgba(201, 185, 201, 1);
   box-shadow: -5px 9px 42px -8px rgba(201, 185, 201, 1);
 }
+.card:hover {
+  transition: transform 1s ease-out;
+  transform: scale(1.04);
+}
