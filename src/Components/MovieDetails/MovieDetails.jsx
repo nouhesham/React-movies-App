@@ -41,7 +41,7 @@ const MovieDetails = () => {
               />
             </div>
           </div>
-          <div className="col-lg-8 p-4">
+          <div className="col-lg-8 p-5">
             <div className={styles.details}>
               <p className={styles.date}>
                 {new Date(movie.release_date).getFullYear()}
