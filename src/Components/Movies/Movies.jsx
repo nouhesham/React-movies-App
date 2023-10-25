@@ -1,18 +1,21 @@
-import LoaderComponent from "../LoaderComponent/Loader.Component";
 import List from "../MoviesList/List";
-import UseMovies from "../../Hook/UseMovies";
-import { useSelector } from "react-redux";
+import { fetchMovies } from "../../Redux/Slices/MoviesSlice";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
+import { useSelector } from "react-redux";
 const Movies = () => {
-  const [loader, error, Moviesapi] = UseMovies();
-  const MoviesGlobalstate = useSelector(
-    (store) => store.search.results.results
-  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchMovies());
+  }, [dispatch]);
+  const moviesList = useSelector((store) => store.movies.moviesList);
+  console.log(moviesList);
+  const searchResults = useSelector((store) => store.search.results);
 
   return (
     <div>
-      <LoaderComponent loader={loader} error={error}></LoaderComponent>
-      <List movies={!MoviesGlobalstate ? Moviesapi : MoviesGlobalstate}></List>
+      <List movies={searchResults?.results || moviesList}></List>
     </div>
   );
 };

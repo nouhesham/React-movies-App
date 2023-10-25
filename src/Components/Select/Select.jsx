@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Select from "react-select";
+import { fetchMovies } from "../../Redux/Slices/MoviesSlice";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const options = [
   { value: "movie", label: "Movie" },
@@ -10,8 +13,17 @@ const SelectComponent = () => {
   const [selectedMedia, setSelectedMedia] = useState(null);
   const handleMediaChange = (selectedOption) => {
     setSelectedMedia(selectedOption.value);
-    console.log(selectedMedia);
   };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchMovies());
+  }, [dispatch]);
+  const moviesApislice = useSelector((state) =>
+    state.movies.moviesList.filter((mov) => {
+      return mov.media_type === selectedMedia;
+    })
+  );
+
   return (
     <div>
       <Select

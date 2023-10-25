@@ -1,6 +1,7 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
+import logo from "../../assets/logo.svg";
 
 const Navbarsection = () => {
   return (
@@ -11,11 +12,7 @@ const Navbarsection = () => {
     >
       <Container>
         <Navbar.Brand href="/">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Tmdb-312x276-logo.png"
-            alt="logo"
-            style={{ width: "70px" }}
-          ></img>
+          <img src={logo} alt="logo" style={{ width: "70px" }}></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
