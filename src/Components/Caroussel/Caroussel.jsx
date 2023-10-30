@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 
 function CarouselFadeExample() {
   return (
-    <Carousel fade style={{ height: "35rem" }}>
+    <Carousel fade>
       <Carousel.Item>
         <img
           style={{ width: "100%" }}
