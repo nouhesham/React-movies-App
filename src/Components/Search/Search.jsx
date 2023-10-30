@@ -12,7 +12,7 @@ const Search = () => {
   const [setsearch, setSearchedmovie] = useState(null);
   const handleSearch = (event) => {
     let searchedfilm = event.target.value;
-    if (searchedfilm && searchedfilm != null) {
+    if (searchedfilm !== null) {
       setSearchedmovie(searchedfilm);
       dispatch(searchMoviesAsync(searchedfilm));
     }

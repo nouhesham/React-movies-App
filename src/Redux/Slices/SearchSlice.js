@@ -29,7 +29,7 @@ const SearchSlice = createSlice({
 });
 
 export const searchMoviesAsync = (query) => async (dispatch) => {
-  dispatch(searchStart());
+  // dispatch(searchStart());
   try {
     const results = await axios.get(
       `https://api.themoviedb.org/3/search/multi?api_key=14bdd69ce887376edfafb09f23f78fe9&query=${query} `

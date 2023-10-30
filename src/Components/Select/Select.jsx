@@ -8,7 +8,7 @@ const options = [
 ];
 
 const SelectComponent = () => {
-  const [selectedMedia, setSelectedMedia] = useState(null);
+  const [selectedMedia, setSelectedMedia] = useState("movie");
   const dispatch = useDispatch();
   const handleMediaChange = (selectedOption) => {
     setSelectedMedia(selectedOption.value);

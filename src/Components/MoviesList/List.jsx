@@ -1,6 +1,7 @@
 import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+
 const List = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/w500/";
 

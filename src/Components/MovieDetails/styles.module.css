@@ -1,14 +1,13 @@
 .img {
-  padding: 3rem;
-  position: absolute;
-  top: 32%;
+  padding: 2rem;
+  top: 5rem;
+  position: relative;
 }
 
 .description {
   font-size: 0.75rem;
   font-weight: 500;
   opacity: 0.7;
-  overflow: hidden;
 }
 .price {
   font-size: 1rem;
@@ -19,10 +18,15 @@
   font-weight: 800;
   color: white;
 }
-
+.genre {
+  border: 1px black solid;
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  background-color: yellow;
+  margin: 3rem;
+}
 .details {
   color: white;
-  position: absolute;
   top: 50%;
   left: 42%;
 }
@@ -58,7 +62,7 @@ h3 {
   justify-content: center;
   margin-top: 1rem;
 }
-@media (max-width: 1500px) {
+/* @media (max-width: 1500px) {
   .details {
     top: 29%;
   }
@@ -147,4 +151,4 @@ h3 {
   h3 {
     font-size: 1rem;
   }
-}
+} */

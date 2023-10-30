@@ -1,7 +1,7 @@
 import List from "../MoviesList/List";
 import { fetchMovies } from "../../Redux/Slices/MoviesSlice";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useSelector } from "react-redux";
 const Movies = () => {
@@ -14,18 +14,26 @@ const Movies = () => {
   const selectedMediaType = useSelector(
     (state) => state.mediatype.selectedMediaType
   );
-  const filteredMovies = selectedMediaType
-    ? moviesList.filter((movie) => movie.media_type === selectedMediaType)
-    : moviesList;
+
+  const [items, setitem] = useState([]);
+
+  useEffect(() => {
+    if (searchResults?.results?.length > 0) {
+      setitem(searchResults.results);
+    } else if (moviesList.length > 0) {
+      setitem(moviesList);
+    }
+  }, [moviesList, searchResults]);
+
+  useEffect(() => {
+    if (selectedMediaType) {
+      setitem(items.filter((movie) => movie.media_type === selectedMediaType));
+    }
+  }, [selectedMediaType]);
+
   return (
     <div>
-      <List
-        movies={
-          searchResults?.results && searchResults?.results.length > 0
-            ? searchResults?.results
-            : filteredMovies
-        }
-      ></List>
+      <List movies={items}></List>
     </div>
   );
 };
