@@ -8,6 +8,7 @@ import Celeb from "./Components/Celeb/Celeb";
 import Blog from "./Components/Blog/Blog";
 import Navbarsection from "./Components/Navbar/Navbar";
 import MovieDetails from "./Components/MovieDetails/MovieDetails";
+import Footer from "./Components/Footer/Footer";
 <style></style>;
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           element={<MovieDetails />}
         ></Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
