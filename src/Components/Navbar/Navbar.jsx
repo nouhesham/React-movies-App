@@ -26,12 +26,6 @@ const Navbarsection = () => {
             <Nav.Link href="/tvshows" className="text-dark fw-bold">
               Tv shows
             </Nav.Link>
-            <Nav.Link href="/celeb" className="text-dark fw-bold">
-              Celeb
-            </Nav.Link>
-            <Nav.Link href="/blog" className="text-dark fw-bold">
-              Blog
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

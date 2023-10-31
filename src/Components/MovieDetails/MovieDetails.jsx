@@ -26,6 +26,8 @@ const MovieDetails = () => {
   }, []);
 
   console.log(movie);
+  const percentage = Math.floor(movie.vote_average * 10);
+  console.log(percentage);
 
   return (
     <div style={{ height: "100vh" }}>
@@ -59,21 +61,16 @@ const MovieDetails = () => {
                 </p>
 
                 <div style={{ width: "5rem" }}>
-                  <ChangingProgressProvider
-                    values={[0, 20, 40, (movie.vote_average / 10) * 100]}
-                  >
-                    {(percentage) => (
-                      <CircularProgressbar
-                        value={percentage}
-                        text={`${percentage}%`}
-                        styles={{
-                          text: { fill: "orange" },
-                          path: { stroke: "orange" },
-                          trail: { stroke: "gray" },
-                        }}
-                      />
-                    )}
-                  </ChangingProgressProvider>
+                  <CircularProgressbar
+                    value={percentage}
+                    text={`${percentage}%`}
+                    strokeWidth={5}
+                    styles={{
+                      text: { fill: "orange" },
+                      path: { stroke: "orange" },
+                      trail: { stroke: "gray" },
+                    }}
+                  />
                 </div>
                 <div className="generes mt-4 mb-2">
                   <div>
