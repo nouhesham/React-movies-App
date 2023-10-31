@@ -140,6 +140,14 @@ h3 {
     top: 92%;
   }
 }
+@media (max-width: 582px) {
+  .img {
+    top: 30%;
+  }
+  .details {
+    margin-top: 3rem;
+  }
+}
 @media (max-width: 552px) {
   .details {
     margin-top: 2rem;
