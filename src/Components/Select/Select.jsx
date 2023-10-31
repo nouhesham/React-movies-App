@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
-import { selectMediaType } from "../../Redux/Slices/MediatypeSlice";
-import { useDispatch } from "react-redux";
+
 const options = [
   { value: "movie", label: "Movie" },
   { value: "tv", label: "Tvshow" },
 ];
 
-const SelectComponent = () => {
-  const [selectedMedia, setSelectedMedia] = useState("movie");
-  const dispatch = useDispatch();
-  const handleMediaChange = (selectedOption) => {
-    setSelectedMedia(selectedOption.value);
-    dispatch(selectMediaType(selectedOption.value));
+const SelectComponent = ({ handleMediaChange, selectedMedia }) => {
+  const handleChange = (selectedOption) => {
+    handleMediaChange(selectedOption);
   };
-
   return (
     <div>
       <Select
@@ -22,7 +17,7 @@ const SelectComponent = () => {
         name="movieMedia"
         value={selectedMedia}
         options={options}
-        onChange={handleMediaChange}
+        onChange={handleChange}
         placeholder="Media type"
         style={{ backgroundColor: "rgb(247, 247, 247)" }}
       />

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const List = ({ movies }) => {
   const baseUrl = "https://image.tmdb.org/t/p/w500/";
+  console.log(movies);
 
   return (
     <div>
@@ -16,6 +17,7 @@ const List = ({ movies }) => {
         </h6>
         <div className="row mt-5 mb-5 justify-content-center">
           {movies?.map((mov) => {
+            console.log(mov.media_type);
             return (
               <div
                 className="col-lg-3 col-sm-12 col-md-6 p-2 d-flex justify-content-center"
