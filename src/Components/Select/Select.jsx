@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Select from "react-select";
 
 const options = [
@@ -7,9 +6,6 @@ const options = [
 ];
 
 const SelectComponent = ({ handleMediaChange, selectedMedia }) => {
-  const handleChange = (selectedOption) => {
-    handleMediaChange(selectedOption);
-  };
   return (
     <div>
       <Select
@@ -17,7 +13,7 @@ const SelectComponent = ({ handleMediaChange, selectedMedia }) => {
         name="movieMedia"
         value={selectedMedia}
         options={options}
-        onChange={handleChange}
+        onChange={handleMediaChange}
         placeholder="Media type"
         style={{ backgroundColor: "rgb(247, 247, 247)" }}
       />

@@ -1,7 +1,6 @@
 import Movies from "../Movies/Movies";
 import InputGroup from "../InputGroup/InputGroup";
 import CarouselFadeExample from "../Caroussel/Caroussel";
-import Footer from "../Footer/Footer";
 
 const Home = () => {
   return (
@@ -9,7 +8,6 @@ const Home = () => {
       <CarouselFadeExample />
       <InputGroup />
       <Movies />
-      <Footer />
     </div>
   );
 };

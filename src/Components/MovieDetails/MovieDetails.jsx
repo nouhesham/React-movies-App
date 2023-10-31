@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import styles from "./styles.module.css";
+import "react-circular-progressbar/dist/styles.css";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card, Container } from "react-bootstrap";
-import styles from "./styles.module.css";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
-
 import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import ChangingProgressProvider from "./ChangingProgressProvider";
+import { useParams } from "react-router-dom";
 
 const MovieDetails = () => {
   const params = useParams();
@@ -25,9 +23,7 @@ const MovieDetails = () => {
     searchMovie();
   }, []);
 
-  console.log(movie);
   const percentage = Math.floor(movie.vote_average * 10);
-  console.log(percentage);
 
   return (
     <div style={{ height: "100vh" }}>

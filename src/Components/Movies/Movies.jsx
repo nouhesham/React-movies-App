@@ -2,27 +2,24 @@ import List from "../MoviesList/List";
 import { fetchMovies } from "../../Redux/Slices/MoviesSlice";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { selectMediaType } from "../../Redux/Slices/MediatypeSlice";
 
 import { useSelector } from "react-redux";
 import SelectComponent from "../Select/Select";
 const Movies = () => {
   const [selectedMedia, setSelectedMedia] = useState("movie");
+  const [items, setitem] = useState([]);
   const dispatch = useDispatch();
-
   const moviesList = useSelector((store) => store.movies.moviesList);
   const searchResults = useSelector((store) => store.search.results);
-  const selectedMediaType = useSelector(
-    (state) => state.mediatype.selectedMediaType
-  );
 
   const handleMediaChange = (selectedOption) => {
     setSelectedMedia(selectedOption.value);
-    dispatch(selectMediaType(selectedOption.value));
-    console.log(selectedMedia);
+    setitem(
+      (searchResults?.results || moviesList).filter(
+        (mov) => mov.media_type === selectedOption.value
+      )
+    );
   };
-
-  const [items, setitem] = useState([]);
 
   useEffect(() => {
     if (searchResults?.results?.length > 0) {
@@ -30,20 +27,7 @@ const Movies = () => {
     } else {
       setitem(moviesList);
     }
-    if (selectedMediaType) {
-      console.log(selectedMediaType);
-      setitem(
-        moviesList.filter((movie) => movie.media_type === selectedMediaType)
-      );
-    }
-  }, [moviesList, searchResults, selectedMediaType]);
-  useEffect(() => {
-    if (selectedMediaType && searchResults?.length > 0) {
-      setitem(
-        moviesList.filter((movie) => movie.media_type === selectedMediaType)
-      );
-    }
-  }, [selectedMediaType, items, moviesList, searchResults]);
+  }, [moviesList, searchResults]);
 
   useEffect(() => {
     dispatch(fetchMovies());
@@ -51,7 +35,7 @@ const Movies = () => {
 
   return (
     <div>
-      <div className="col-lg-8 mt-2 d-flex  justify-content-end">
+      <div className="col-lg-10 mt-2 d-flex  justify-content-end ">
         <SelectComponent
           handleMediaChange={handleMediaChange}
           selectedMedia={selectedMedia}

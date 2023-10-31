@@ -6,6 +6,7 @@ import Home from "./Components/Home/Home";
 import Tvshows from "./Components/Tvshows/Tvshows";
 import Navbarsection from "./Components/Navbar/Navbar";
 import MovieDetails from "./Components/MovieDetails/MovieDetails";
+import Footer from "./Components/Footer/Footer";
 
 <style></style>;
 function App() {
@@ -21,6 +22,7 @@ function App() {
           element={<MovieDetails />}
         ></Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

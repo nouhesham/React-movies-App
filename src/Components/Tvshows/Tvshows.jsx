@@ -13,7 +13,7 @@ const Tvshows = () => {
     dispatch(fetchMovies());
   }, [dispatch]);
   const moviesApi = useSelector((store) => store.movies.moviesList);
-  console.log(moviesApi);
+
   const move = moviesApi.filter((mov) => {
     return mov.media_type === "tv";
   });
