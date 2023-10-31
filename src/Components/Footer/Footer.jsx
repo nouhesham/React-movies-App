@@ -12,7 +12,6 @@ const Footer = () => {
         backgroundBlendMode: "darken",
         backgroundColor: "lightgray",
         width: "100vw",
-        position: "fixed",
       }}
     >
       <Container>
