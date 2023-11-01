@@ -56,7 +56,7 @@ const MovieDetails = () => {
                   {movie?.overview?.slice(0, 150)}
                 </p>
 
-                <div style={{ width: "5rem" }}>
+                <div className={styles.progress}>
                   <CircularProgressbar
                     value={percentage}
                     text={`${percentage}%`}
@@ -68,14 +68,12 @@ const MovieDetails = () => {
                     }}
                   />
                 </div>
-                <div className="generes mt-4 mb-2">
-                  <div>
-                    {movie.genres?.map((genre) => (
-                      <span className={styles.genre} key={genre.id}>
-                        {genre.name}
-                      </span>
-                    ))}
-                  </div>
+                <div className="generes mt-4 mb-2 d-flex flex-row">
+                  {movie.genres?.map((genre) => (
+                    <span className={styles.genre} key={genre.id}>
+                      {genre.name}
+                    </span>
+                  ))}
                 </div>
                 <div className="d-flex  align-items-center ">
                   <div className={styles.icon}>
