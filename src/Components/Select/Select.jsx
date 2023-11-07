@@ -7,7 +7,7 @@ const options = [
 
 const SelectComponent = ({ handleMediaChange, selectedMedia }) => {
   return (
-    <div>
+    <div style={{ width: "80%", margin: "auto" }}>
       <Select
         id="movie-media-select"
         name="movieMedia"
@@ -15,7 +15,7 @@ const SelectComponent = ({ handleMediaChange, selectedMedia }) => {
         options={options}
         onChange={handleMediaChange}
         placeholder="Media type"
-        style={{ backgroundColor: "rgb(247, 247, 247)" }}
+        style={{ backgroundColor: "rgb(247, 247, 247)", width: "4rem" }}
       />
     </div>
   );

@@ -35,7 +35,7 @@ const Movies = () => {
 
   return (
     <div>
-      <div className="col-lg-10 mt-2 d-flex  justify-content-end ">
+      <div className="col-lg-12 mt-2 d-flex  justify-content-end ">
         <SelectComponent
           handleMediaChange={handleMediaChange}
           selectedMedia={selectedMedia}
