@@ -20,13 +20,14 @@ const MovieDetails = () => {
   };
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     searchMovie();
   }, []);
 
   const percentage = Math.floor(movie.vote_average * 10);
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div>
       <div
         style={{
           backgroundImage: `url("https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${movie.backdrop_path}")`,
