@@ -244,9 +244,9 @@ h3 {
     padding: 0;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 354px) {
   .details {
-    padding-top: 0.5rem;
+    padding-top: 2.5rem;
     margin-top: 1rem;
     margin-left: 0;
   }
