@@ -20,7 +20,7 @@ const Footer = () => {
       <Container>
         <footer
           className=" text-white pt-5 pb-5 "
-          style={{ marginTop: "12rem" }}
+          style={{ marginTop: "20rem" }}
         >
           <div className="container">
             <div className="row">
