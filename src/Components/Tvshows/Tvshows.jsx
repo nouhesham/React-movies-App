@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+import Footer from "../Footer/Footer";
 
 const Tvshows = () => {
   const baseUrl = "https://image.tmdb.org/t/p/w500/";
@@ -55,6 +56,7 @@ const Tvshows = () => {
           })}
         </div>
       </Container>
+      <Footer />
     </div>
   );
 };

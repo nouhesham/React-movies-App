@@ -22,7 +22,7 @@ function App() {
           element={<MovieDetails />}
         ></Route>
       </Routes>
-      <Footer />
+     
     </BrowserRouter>
   );
 }
