@@ -82,13 +82,16 @@ const MovieDetails = () => {
                   <span className="ms-3 pt-3 me-3">
                     <a
                       href={movie.homepage}
-                      className="text-danger text-decoration-none"
+                      className="text-decoration-none"
+                      style={{ color: "orange" }}
                     >
                       Watch the trailer
                     </a>
                   </span>
                   <span className="pt-3">Runtime:{movie.runtime} </span>
-                  <span className="ms-2 pt-3">seconds</span>
+                  <span className="ms-2 pt-3" style={{ fontSize: "0.8rem" }}>
+                    seconds
+                  </span>
                 </div>
               </div>
             </div>

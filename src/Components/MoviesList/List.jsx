@@ -18,7 +18,7 @@ const List = ({ movies }) => {
           {movies?.map((mov) => {
             return (
               <div
-                className="col-lg-3 col-sm-12 col-md-6 p-2 d-flex justify-content-center"
+                className="col-lg-3 col-sm-6 col-md-4 p-2 d-flex justify-content-center"
                 key={mov.id}
               >
                 <Card style={{ width: "18rem" }} className="card">

@@ -104,6 +104,14 @@ h3 {
     font-size: 1rem;
     margin-top: 3rem;
   }
+  .genre {
+    border: none;
+    border-radius: 0rem;
+    padding: 0px;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    background-color: white;
+  }
 
   .img {
     width: 50%;
@@ -224,8 +232,7 @@ h3 {
 
 @media (max-width: 398px) {
   .details {
-    padding-top: 0.5rem;
-    margin-top: 4rem;
+    padding-top: 4rem;
     margin-left: 0;
   }
   .img {
