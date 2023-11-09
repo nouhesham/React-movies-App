@@ -50,9 +50,11 @@ const MovieDetails = () => {
             <div className="col-lg-8 p-5 " style={{ zIndex: "1" }}>
               <div className={styles.details}>
                 <p className={styles.date}>
-                  {new Date(movie.release_date)?.getFullYear()}
+                  {movie.release_date
+                    ? new Date(movie.release_date)?.getFullYear()
+                    : null}
                 </p>
-                <h3>{movie.title || movie.original_name}</h3>
+                <h4>{movie.title || movie.original_name}</h4>
                 <p className={styles.description}>
                   {movie?.overview?.slice(0, 150)}
                 </p>

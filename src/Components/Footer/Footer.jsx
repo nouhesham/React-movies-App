@@ -18,10 +18,7 @@ const Footer = () => {
   return (
     <div style={footerStyle}>
       <Container>
-        <footer
-          className=" text-white pt-5 pb-5 "
-          style={{ marginTop: "18rem" }}
-        >
+        <footer className=" text-white pt-5 pb-5 ">
           <div className="container">
             <div className="row">
               <div className="col-md-4">
